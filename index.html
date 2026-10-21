@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrickLive - Cricket Scores</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033}
+header{background:#071c35;color:white;padding:20px 16px}
+.logo{font-size:26px;font-weight:bold;color:#35e0a1}
+nav{display:flex;gap:18px;overflow:auto;margin-top:18px}
+nav a{color:white;text-decoration:none;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#092b4c,#087b70);color:white;padding:25px 18px}
+.hero h1{font-size:27px;margin:5px 0}
+.container{padding:16px;max-width:850px;margin:auto}
+.heading{display:flex;justify-content:space-between;align-items:center}
+.heading h2{font-size:21px}
+.badge{color:#e11d48;font-weight:bold;font-size:13px}
+.card{background:white;padding:18px;border-radius:16px;margin:14px 0;box-shadow:0 4px 15px #0000000d}
+.league{color:#64748b;font-size:13px}
+.teams{display:flex;justify-content:space-between;align-items:center;margin:20px 0}
+.team{text-align:center;width:40%;font-weight:bold}
+.flag{font-size:35px;display:block;margin-bottom:8px}
+.score{font-size:23px;margin-top:8px}
+.vs{color:#94a3b8;font-size:13px}
+.status{background:#dcfce7;color:#166534;padding:9px;border-radius:8px;font-size:13px}
+.buttons{display:flex;gap:10px;overflow:auto;margin:16px 0}
+button{border:0;padding:12px 16px;border-radius:9px;background:#e2e8f0;white-space:nowrap;font-weight:bold}
+button.active{background:#087b70;color:white}
+.panel{display:none}
+.panel.active{display:block}
+table{width:100%;border-collapse:collapse;background:white;font-size:13px}
+th,td{padding:12px 7px;text-align:left;border-bottom:1px solid #e2e8f0}
+th{background:#e8f4f1}
+footer{text-align:center;background:#071c35;color:#cbd5e1;padding:25px;margin-top:25px;font-size:13px}
+.small{font-size:12px;color:#64748b;line-height:1.6}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">🏏 CrickLive</div>
+  <nav>
+    <a href="#live">Live Scores</a>
+    <a href="#matches">Schedule</a>
+    <a href="#points" onclick="showTab('points')">Points Table</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>YOUR CRICKET. YOUR PASSION.</div>
+  <h1>Cricket Live Centre</h1>
+  <p>Scores, matches and cricket updates in one place.</p>
+</section>
+
+<main class="container">
+  <div class="heading" id="live">
+    <h2>🏆 Featured Match</h2><span class="badge">● DEMO</span>
+  </div>
+
+  <article class="card">
+    <div class="league">INTERNATIONAL CRICKET · DEMO SCORE</div>
+    <div class="teams">
+      <div class="team"><span class="flag">🇮🇳</span>India<div class="score">185/5</div><small>20 Overs</small></div>
+      <div class="vs">VS</div>
+      <div class="team"><span class="flag">🇦🇺</span>Australia<div class="score">142/4</div><small>16.2 Overs</small></div>
+    </div>
+    <div class="status">Demo match card — these are sample scores, not live data.</div>
+    <p class="small">Venue: International Cricket Stadium</p>
+  </article>
+
+  <div class="buttons">
+    <button class="active" onclick="showTab('matches',this)">📅 Schedule</button>
+    <button onclick="showTab('points',this)">🏆 Points Table</button>
+    <button onclick="showTab('players',this)">⭐ Players</button>
+  </div>
+
+  <section id="matches" class="panel active">
+    <h2>Upcoming Matches</h2>
+    <article class="card"><div class="league">ONE DAY INTERNATIONAL</div><h3>🇮🇳 India vs 🇿🇦 South Africa</h3><p>📅 Upcoming fixture</p><p class="small">Exact date and time not connected to a live schedule.</p></article>
+    <article class="card"><div class="league">T20 INTERNATIONAL</div><h3>🇵🇰 Pakistan vs 🏴 England</h3><p>📅 Upcoming fixture</p><p class="small">Sample fixture for website preview.</p></article>
+    <article class="card"><div class="league">TEST CRICKET</div><h3>🇦🇺 Australia vs 🇳🇿 New Zealand</h3><p>📅 Upcoming fixture</p><p class="small">Sample fixture for website preview.</p></article>
+  </section>
+
+  <section id="points" class="panel">
+    <h2>Points Table</h2>
+    <div class="card" style="padding:0;overflow:auto">
+      <table>
+        <tr><th>Team</th><th>Played</th><th>Won</th><th>Pts</th></tr>
+        <tr><td>🇮🇳 India</td><td>5</td><td>4</td><td>8</td></tr>
+        <tr><td>🇦🇺 Australia</td><td>5</td><td>3</td><td>6</td></tr>
+        <tr><td>🏴 England</td><td>5</td><td>3</td><td>6</td></tr>
+        <tr><td>🇿🇦 South Africa</td><td>5</td><td>2</td><td>4</td></tr>
+      </table>
+    </div>
+    <p class="small">Sample table for demonstration only.</p>
+  </section>
+
+  <section id="players" class="panel">
+    <h2>Star Players</h2>
+    <article class="card"><h3>🇮🇳 Virat Kohli</h3><p>Batter · India</p></article>
+    <article class="card"><h3>🇮🇳 Jasprit Bumrah</h3><p>Bowler · India</p></article>
+    <article class="card"><h3>🇦🇺 Pat Cummins</h3><p>Bowler · Australia</p></article>
+  </section>
+
+  <section class="card" id="about">
+    <h2>About CrickLive</h2>
+    <p>CrickLive is a cricket website project for viewing match cards, schedules, team tables and player information.</p>
+    <p class="small">This version uses sample data. Real live scores require a cricket data API.</p>
+  </section>
+</main>
+
+<footer>🏏 CrickLive · Cricket lives here.<br><br>Student Web Development Project</footer>
+
+<script>
+function showTab(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.buttons button').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else document.querySelectorAll('.buttons button').forEach(b=>{
+    if(b.textContent.includes('Points')&&id==='points')b.classList.add('active');
+  });
+}
+</script>
+</body>
+  </html>
